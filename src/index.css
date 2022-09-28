@@ -5,9 +5,115 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(3, 7, 70);
+  color: white;
 }
-
-code {
+.code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.header {
+  background-color: rgb(16, 4, 122);
+  padding: 30px 0;
+  border: none;
+  margin-bottom: 40px;
+}
+.container {
+  max-width: 1200px;
+  padding: 0 12px ;
+  margin: 0 auto;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+}
+input {
+  border: 2px solid white ;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: transparent;
+  color: white;
+}
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px
+}
+.card {
+  background-color: rgb(6, 6, 100);
+  overflow: hidden;
+}
+.card:hover {
+  cursor: pointer;
+}
+.card:hover img {
+  transform: scale(1.05);
+}
+.card .info {
+  position: relative;
+}
+.rate {
+  background-color: rgb(43, 231, 14);
+  padding: 5px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 5px;
+}
+.rate.red{
+  background-color: red;
+}
+.card img {
+  max-width: 100%;
+  transition: .3s;
+}
+.card .overview {
+  position: absolute;
+  padding: 6px;
+  top: 4px;
+  opacity: 0;
+  background-color: transparent;
+  color: rgb(251, 248, 248);
+  transform: translateY(0%);
+  transition: .3s;
+} 
+
+.card:hover .overview {
+   transform: translateY(-100%); 
+   opacity: 1;
+   display: flex;
+   justify-content: center;
+   color: rgb(0, 0, 0);
+   background-color: rgba(255, 248, 248, 0.255);
+ }
+ @media (max-width:650px) {
+  .container{
+    max-width: 412px;
+    font-size: 10px;
+    padding: 0 25px;
+    margin: 0 auto;
+  }
+  input{
+    border: solid 1.5px;
+    border-radius: 20px;
+    font-size: 12px;
+    background-color: transparent;
+    color: wheat;
+    width: 100px;
+  }
+  .card-list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px; 
+  }
+  .card .overviem{
+    font-size: 8px;
+  }
+  
+  
 }
